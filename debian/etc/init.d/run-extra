@@ -1,0 +1,35 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          run-extra
+# Required-Start:    mountall
+# Required-Stop: 
+# Default-Start:     S
+# Default-Stop:
+# Short-Description: Mount all filesystems.
+# Description:
+### END INIT INFO
+
+do_start() {
+	mkdir /run/www-sockets
+	chown www-data /run/www-sockets
+	chgrp www-data /run/www-sockets
+}
+
+case "$1" in
+  start|"")
+	do_start
+	;;
+  restart|reload|force-reload)
+	echo "Error: argument '$1' not supported" >&2
+	exit 3
+	;;
+  stop)
+	# No-op
+	;;
+  *)
+	echo "Usage: run-extra [start|stop]" >&2
+	exit 3
+	;;
+esac
+
+:
