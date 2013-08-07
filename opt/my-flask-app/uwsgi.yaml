@@ -1,0 +1,5 @@
+uwsgi:
+    socket: /run/www-sockets/my-flask-app.sock
+    virtualenv: /opt/my-flask-app/venv
+    chdir: /opt/my-flask-app
+    wsgi-file: app.wsgi

@@ -5,6 +5,9 @@ Contents
 
     .
     |-- etc
+    |   |-- logrotate
+    |   |-- logrotate.d
+    |   |   `-- rsyslog-extra
     |   |-- nginx
     |   |   |-- nginx.conf
     |   |   |-- sites-available
@@ -21,9 +24,18 @@ Contents
     |   |       |-- php.ini
     |   |       `-- pool.d
     |   |           `-- main.conf
+    |   |-- rsyslog.d
+    |   |   `-- 100-wsgi-apps.conf
     |   `-- supervisor
     |       `-- conf.d
     |           `-- my-flask-app.conf
+    |-- opt
+    |   `-- my-flask-app
+    |       |-- app.debug
+    |       |-- app.py
+    |       |-- app.wsgi
+    |       |-- requirements.txt
+    |       `-- uwsgi.yaml
     |-- debian
     |   `-- etc
     |       `-- init.d
