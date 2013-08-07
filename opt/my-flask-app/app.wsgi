@@ -9,6 +9,7 @@ app.config['EMAIL_FROM'] = "my-flask-app@domain.co.uk"
 app.config['EMAIL_SERVER'] = "localhost"
 
 _format_string = "my-flask-app: %(name)s %(levelname)s %(message)s"
+# see /etc/rsyslog.d/100-wsgi-apps.conf
 syslog_handler = SysLogHandler(facility=SysLogHandler.LOG_LOCAL5,
                                address="/dev/log")
 syslog_handler.setLevel(logging.INFO)
