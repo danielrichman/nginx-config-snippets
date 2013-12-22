@@ -1,0 +1,8 @@
+# trailing / so that we don't match /my-app-suffix. From the docs,
+
+# If a location is defined by a prefix string that ends with the slash
+# character, and requests are processed by one of proxy_pass,
+# fastcgi_pass, scgi_pass, uwsgi_pass, or memcached_pass, then in
+# response to a request with URI equal to this string, but without the
+# trailing slash, a permanent redirect with the code 301 will be returned
+# to the requested URI with the slash appended.
