@@ -1,0 +1,10 @@
+# Canonicalise: Append www. to naked domain; redirect from alternative domains.
+server {
+    listen [::]:80
+    server_name domain.co.uk alternative_domain.com;
+
+    access_log /var/log/nginx/canonicalise.access.log;
+    error_log /var/log/nginx/canonicalise.error.log;
+
+    return 301 $scheme://www.domain.co.uk$request_uri;
+}

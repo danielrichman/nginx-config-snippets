@@ -1,0 +1,25 @@
+# Canonicalises domains, and sends HTTP->HTTPS (preserving URI)
+server {
+    listen [::]:80;
+    listen [::]:443 ssl;
+    server_name domain.co.uk alternative_domain.co.uk;
+
+    include ssl.conf;
+    ssl_certificate /etc/nginx/certs/www.domain.co.uk.chained.crt;
+    ssl_certificate_key /etc/nginx/certs/www.domain.co.uk.key;
+
+    access_log /var/log/nginx/canonicalise.access.log;
+    error_log /var/log/nginx/canonicalise.error.log;
+
+    return 301 https://www.domain.co.uk$request_uri;
+}
+
+server {
+    listen [::]:80;
+    server_name www.domain.co.uk;
+
+    access_log /var/log/nginx/canonicalise.access.log;
+    error_log /var/log/nginx/canonicalise.error.log;
+
+    return 301 https://www.domain.co.uk$request_uri;
+}

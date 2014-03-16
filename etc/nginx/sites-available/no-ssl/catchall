@@ -1,3 +1,5 @@
+# Requests for other domains (e.g., name_of_box.domain.co.uk, IP, ...)
+# are sent to the homepage
 server {
     listen [::]:80 default_server;
     server_name _;
@@ -6,5 +8,5 @@ server {
     access_log /var/log/nginx/default.access.log;
     error_log /var/log/nginx/default.error.log;
 
-    return 301 $scheme://www.domain.co.uk$request_uri;
+    return 301 $scheme://www.domain.co.uk/;
 }

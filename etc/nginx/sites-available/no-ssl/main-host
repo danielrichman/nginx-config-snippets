@@ -5,9 +5,9 @@ server {
     # note modern browsers visiting via IP /do/ set the Host header,
     # get caught by catchall, and sent to the correct url
 
-    root /var/www/domain.co.uk;
-    index index.html;
-
     access_log /var/log/nginx/domain.co.uk.access.log;
     error_log /var/log/nginx/domain.co.uk.error.log;
+
+    root /var/www/domain.co.uk;
+    index index.html;
 }

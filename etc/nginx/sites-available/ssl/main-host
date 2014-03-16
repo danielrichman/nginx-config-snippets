@@ -1,0 +1,14 @@
+server {
+    listen [::]:443 ssl;
+    server_name www.domain.co.uk "";
+
+    include ssl.conf;
+    ssl_certificate /etc/nginx/certs/www.domain.co.uk.chained.crt;
+    ssl_certificate_key /etc/nginx/certs/www.domain.co.uk.key;
+
+    access_log /var/log/nginx/domain.co.uk.access.log;
+    error_log /var/log/nginx/domain.co.uk.error.log;
+
+    root /var/www/domain.co.uk;
+    index index.html;
+}
