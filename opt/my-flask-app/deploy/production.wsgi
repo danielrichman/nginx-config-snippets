@@ -1,7 +1,8 @@
 import logging
 import flask
 from logging.handlers import SysLogHandler, SMTPHandler
-from notam import app
+
+from my_project import app
 
 app.secret_key = "something-secret"
 app.config['EMAIL_TO'] = ["you@domain.co.uk"]

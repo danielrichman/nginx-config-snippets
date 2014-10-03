@@ -2,4 +2,6 @@ uwsgi:
     socket: /run/www-sockets/my-flask-app.sock
     virtualenv: /opt/my-flask-app/venv
     chdir: /opt/my-flask-app
-    wsgi-file: app.wsgi
+    mount: /my-flask-app=deploy/production.wsgi
+    # alternatively, /my-flask-app=my_module.websubmodule:app
+    mnage-script-name: true

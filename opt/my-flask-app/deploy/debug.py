@@ -2,7 +2,7 @@
 
 import os
 import logging
-from notam import app
+from my_project import app
 
 app.secret_key = os.urandom(16)
 app.config['TRAP_BAD_REQUEST_ERRORS'] = True
