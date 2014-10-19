@@ -9,6 +9,7 @@ server {
     include ssl.conf;
     ssl_certificate /etc/nginx/certs/www.domain.co.uk.chained.crt;
     ssl_certificate_key /etc/nginx/certs/www.domain.co.uk.key;
+    ssl_trusted_certificate /etc/nginx/certs/www.domain.co.uk.ca.crt;
 
     access_log /var/log/nginx/default.access.log;
     error_log /var/log/nginx/default.error.log;
