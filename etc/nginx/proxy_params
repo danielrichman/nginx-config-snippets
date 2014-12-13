@@ -1,0 +1,5 @@
+proxy_set_header   Host                 $host;
+proxy_set_header   X-Forwarded-For      $remote_addr;
+proxy_set_header   X-Forwarded-Proto    $scheme;
+# Werkzeug will listen to this; an evil client can provide it.
+proxy_set_header   X-Forwarded-Host     "";
